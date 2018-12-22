@@ -100,6 +100,15 @@ set(TWINKLE_GUI-SRCS
 	${twinkle_LANG}
 )
 
+if (WITH_AKONADI)
+	list(APPEND qt_LIBS
+		KF5::AkonadiCore
+		KF5::Contacts)
+	list(APPEND TWINKLE_GUI-SRCS
+		akonadiaddressbook.cpp
+		kcontactstablemodel.cpp)
+endif (WITH_AKONADI)
+
 add_executable(twinkle ${TWINKLE_GUI-SRCS})
 target_link_libraries(twinkle ${twinkle_LIBS} ${qt_LIBS})
 
