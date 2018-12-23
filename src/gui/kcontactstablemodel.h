@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2016  Frédéric Brière <fbriere@fbriere.net>
+    Copyright (C) 2018  Frédéric Brière <fbriere@fbriere.net>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
