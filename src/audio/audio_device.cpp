@@ -365,6 +365,7 @@ t_alsa_io::~t_alsa_io() {
 		log_file->write_footer();
 		
 		// Without the snd_pcm_hw_free, snd_pcm_close sometimes fails.
+		snd_pcm_drop(pcm_play_ptr);
 		snd_pcm_hw_free(pcm_play_ptr);
 		snd_pcm_close(pcm_play_ptr);
 		pcm_play_ptr = 0;
@@ -376,6 +377,7 @@ t_alsa_io::~t_alsa_io() {
 		log_file->write_endl();
 		log_file->write_footer();
 		
+		snd_pcm_drop(pcm_rec_ptr);
 		snd_pcm_hw_free(pcm_rec_ptr);
 		snd_pcm_close(pcm_rec_ptr);
 		pcm_rec_ptr = 0;
